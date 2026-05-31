@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 title: youzi # the main title
 
-tagline: crypto notes # it will display as the subtitle
+tagline: 记录大学学习生活 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   密码学学习记录
