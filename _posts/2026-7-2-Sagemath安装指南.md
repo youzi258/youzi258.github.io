@@ -9,7 +9,7 @@ math: true
 
 0. [前言](#0-前言)
 1. [安装wsl](#1-安装wsl)
-2. [通过vscode连接wsl（可选）](#2-通过vscode连接wsl（可选）)
+2. [通过vscode连接wsl](#2-通过vscode连接wsl)
 3. [更换ubuntu源](#3-更换ubuntu源)
 4. [linux基本操作指令](#4-linux基本操作指令)
 5. [安装conda包管理器](#5-安装conda包管理器)
@@ -50,7 +50,7 @@ wsl --install
 首次启动会提示创建Linux用户名和密码（ 密码输入时不会显示字符，正常输入后回车即可），然后重复输入密码
 
 
-## 2-通过vscode连接wsl（可选）
+## 2-通过vscode连接wsl
 
 **Visual Studio Code**（简称VSCode）是一款轻量级但功能强大的代码编辑器，支持多种编程语言（注意不是紫色的Visual Studio）
 
