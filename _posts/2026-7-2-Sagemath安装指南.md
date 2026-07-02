@@ -5,17 +5,29 @@ date: 2026-7-2
 math: true
 ---
 
+## 目录
 
-- [[#1  安装wsl|1  安装wsl]]
-- [[#2  通过vscode连接wsl（可选）|2  通过vscode连接wsl（可选）]]
-- [[#3  更换ubuntu源|3  更换ubuntu源]]
-- [[#4  linux基本操作指令|4  linux基本操作指令]]
-- [[#5  安装conda包管理器|5  安装conda包管理器]]
-- [[#6  通过conda安装sage|6  通过conda安装sage]]
-- [[#7  为sage安装第三方库|7  为sage安装第三方库]]
-- [[#8  使用sage|8  使用sage]]
+0. [前言](#0-前言)
+1. [安装wsl](#1-安装wsl)
+2. [通过vscode连接wsl（可选）](#2-通过vscode连接wsl（可选）)
+3. [更换ubuntu源](#3-更换ubuntu源)
+4. [linux基本操作指令](#4-linux基本操作指令)
+5. [安装conda包管理器](#5-安装conda包管理器)
+6. [通过conda安装sage](#6-通过conda安装sage)
+7. [为sage安装第三方库](#7-为sage安装第三方库)
+8. [使用sage](#8-使用sage)
 
-## 1  安装wsl
+
+## 0-前言
+
+Sagemath是一款快速成长且开源的数学软件，提供了非常丰富的代数与数论方面的功能。在CTF Crypto中，有大量的题目需要编写sage脚本去解决（除非你想用python手搓各种工具）
+
+在如今的AICTFer时代，~~当我们兴高采烈地打开agent准备一把梭时~~，总会被一个又一个环境问题给卡住。因为sage的重要性，笔者认为，**每一个入门者都应该学习如何配置和使用它**。
+
+sagemath在windows上提供了基于 Cygwin 的开箱即用版本，但是版本比较落后，而且调用起来不方便。在网页端上也可以使用，但不支持第三方库。因此，想要全面、便利地使用sage（~~供ai调用~~）就必须在Linux子系统里配置相关环境。
+
+
+## 1-安装wsl
 
 **WSL(Windows Subsystem for Linux)** 是适用于 Linux 的 Windows 子系统，开发人员可以安装 Linux 分发版（如 Ubuntu、OpenSUSE、Kali、Debian、Arch Linux 等），并在 Windows 上直接使用 Linux 应用程序、实用工具和 Bash 命令行工具（未经修改），无需传统虚拟机或双包设置的开销。
 
@@ -38,7 +50,7 @@ wsl --install
 首次启动会提示创建Linux用户名和密码（ 密码输入时不会显示字符，正常输入后回车即可），然后重复输入密码
 
 
-## 2  通过vscode连接wsl（可选）
+## 2-通过vscode连接wsl（可选）
 
 **Visual Studio Code**（简称VSCode）是一款轻量级但功能强大的代码编辑器，支持多种编程语言（注意不是紫色的Visual Studio）
 
@@ -51,7 +63,7 @@ wsl --install
 连接上后，我们可以打开文件夹/home/用户名。可以新建一个终端，随后的所有命令都可以在vscode的终端中运行。
 
 
-## 3  更换ubuntu源
+## 3-更换ubuntu源
 
 接下来，由于Ubuntu默认源是国外服务器，国内访问速度慢，替换为清华源，更新和下载软件会快很多。
 
@@ -106,7 +118,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-## 4  linux基本操作指令
+## 4-linux基本操作指令
 
 | 类别     | 指令            | 作用       | 示例                       |
 | ------ | ------------- | -------- | ------------------------ |
@@ -135,7 +147,7 @@ sudo apt upgrade
 | 切换管理员  | `sudo`        | 以管理员权限执行 | `sudo reboot`            |
 | 查看命令帮助 | `man`         | 查看指令手册   | `man ls`                 |
 
-## 5  安装conda包管理器
+## 5-安装conda包管理器
 
 **Conda**是一款开源的软件包管理系统和环境管理系统，支持在Linux系统中管理多版本软件包及其依赖关系。
 
@@ -190,7 +202,7 @@ conda --version
 如果正确输出版本号，则conda安装成功。
 
 
-## 6  通过conda安装sage
+## 6-通过conda安装sage
 
 先接受安装的服务条款：
 
@@ -223,7 +235,7 @@ sage
 出现sage:提示符后，恭喜你，已经完成了sagemath for linux的安装。
 
 
-## 7  为sage安装第三方库
+## 7-为sage安装第三方库
 
 许多我们在python中常用的第三方库在sage中并不自带，我们必须手动安装它们。
 
@@ -249,7 +261,7 @@ sage -c "from Crypto.Util.number import getPrime; print(getPrime(64))"
 发现能输出一个大素数，则安装成功。
 
 
-## 8  使用sage
+## 8-使用sage
 
 我们只需要在vscode左侧的资源管理器中先新建一个文件夹，用来存放我们的脚本，随后新建 .sage文件，比如test.sage。在.sage文件中编写我们的解题代码，随后在终端中执行
 
